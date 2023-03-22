@@ -1,5 +1,5 @@
 <?php
-//vetores menores
+//vetores 
   $produto1 = [
                 "nome" => "Câmera",
                 "marca" => "LG",
@@ -16,9 +16,11 @@
                 "preco" => 3500
   ]; 
 
-  //vetor maior, que armazena os outros vetores
+  //matriz
   $produtos = [
                 $produto1,
                 $produto2,
                 $produto3
   ]; 
+
+  echo json_encode($produtos); //js obhect notation
