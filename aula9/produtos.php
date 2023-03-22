@@ -24,3 +24,4 @@
   ]; 
 
   echo json_encode($produtos); //js obhect notation
+  ?>
