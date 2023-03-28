@@ -2,9 +2,9 @@
 
 <?php
 
-   if ($_GET["usuario"]=="admin" && $_GET["senha"]==123){
-    echo "logado"; //se o usuario é igaual admin e a senha igual 123
-   } //$_GET nunca muda
+   if ($_POST["usuario"]=="admin" && $_POST["senha"]==123){
+    echo "logado"; 
+   } //envia algo para o servidor
    else{
     echo "Usuário ou senha inválidos!";
    }
