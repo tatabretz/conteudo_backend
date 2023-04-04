@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Produtos</h1>
+    <hr>
+
+    <table id="produtos" border=1 width="100%">
+        <tr>
+            <th>Nome</th>
+            <th>Marca</th>
+            <th>Preço</th>
+        </tr>
+    </table>
+
+    <script>
+        //está pegando o elemento tabela do HTML 
+        let tabela = document.querySelector("#produtos");
+
+        function inserirLinha(nome, marca, preco){
+        //vamos criar uma linha nessa tabela
+        let linha = tabela.insertRow();
+
+        //vamos criar as células na tabela
+        let celNome = linha.insertCell();
+        let celMarca = linha.insertCell();
+        let celPreco = linha.insertCell();
+
+        //coloca valores nas células
+        celNome.innerHTML = nome;
+        celMarca.innerHTML = marca;
+        celPreco.innerHTML = preco;
+        }
+
+
+        //fetch abre uma URL
+        fetch("http://localhost/3infob/conteudo_backend/aula9/produtos.php")  //busca dados no servidor
+        .then($resposta => $resposta.json())
+        .then($json => {
+            for(var i=0; i<3; i++){
+                inserirLinha($json[i]["nome"],
+                $json[i]["marca"], $json[i]["preco"]);
+            }
+        });
+        
+
+    </script>
+
+        
+</body>
+</html>
