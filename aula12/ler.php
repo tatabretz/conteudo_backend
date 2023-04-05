@@ -8,7 +8,7 @@ $noticia = $noticias[$id];
 ?>
 
 <div class="container">
-    <h1> <?php echo $noticia ['titulo']; ?></h1>
+    <h1><?php echo $noticia ['titulo']; ?></h1>
     <img src="<?php echo $noticia ['foto']; ?>" class="" />
     <p> <?php echo $noticia ['materia']; ?> </p>
 </div>
