@@ -3,6 +3,11 @@
    //importa o arquivo de conexão
    require_once "../conexao.php";
 
+   //verifica se o nome, login e senha foram enviado
+   //do formulário
+   if(isset($_POST['nome']) && isset($_POST['login']) &&
+     isset($_POST['senha'])){
+
    $nome = $_POST['nome'];
    $login = $_POST['login'];
    $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
@@ -19,8 +24,9 @@
    //executa o comando
    $comando->execute();
 
+}
    //volta para o formulário
-   header("Location: ../form_usuario.php");
+   header("Location: ../usuario.php");
 
    
 
