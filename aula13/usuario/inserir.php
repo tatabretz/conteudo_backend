@@ -26,7 +26,7 @@
 
 }
    //volta para o formulário
-   header("Location: ../usuario.php");
+   header("Location: ../usuarios.php");
 
    
 
