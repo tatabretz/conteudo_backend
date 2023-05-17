@@ -25,6 +25,7 @@
     <tr>
         <th scope="col">Nome</th>
         <th scope="col">Login</th>
+        <th scope="col">Foto</th>
         <th scope="col">Ações</th>
     </tr>
          </thead>
@@ -33,6 +34,7 @@
     <tr>
         <td><?= $usuario->nome ?></td>
         <td><?= $usuario->login ?></td>
+        <td><img src="upload/<?= $usuario->foto ?>" height="25px"></td>
         <td>
         <a href="form_usuario.php?id=<?= $usuario->idusuario ?>" class="btn btn-primary">
             <i class="fa-regular fa-pen-to-square"></i>
