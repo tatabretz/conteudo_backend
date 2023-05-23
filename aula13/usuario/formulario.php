@@ -1,6 +1,6 @@
 <?php
     //importa o arquivo de conexão
-    require_once "usuario/consultar_por_id.php";
+    require_once "consultar_por_id.php";
 
 ?>
 
@@ -17,8 +17,8 @@
     <hr>
 
     <form action="<?php echo isset($usuario) ?
-                            "usuario/atualizar.php" : 
-                            "usuario/inserir.php"; ?>"
+                            "atualizar.php" : 
+                            "inserir.php"; ?>"
                             
 method="post" enctype="multipart/form-data">
 
