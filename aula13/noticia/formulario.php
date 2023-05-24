@@ -1,44 +1,37 @@
 <?php
-    //importa o arquivo de conexão
     require_once "consultar_por_id.php";
-
+    require_once "../template/cabecalho.php";
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Cadastro de notícia</h1>
+    <div class="container">
+    <h1>Cadastro de noticias</h1>
     <hr>
 
-    <form action="<?php echo isset($noticia) ?
+    <form action="<?php echo isset($noticia) ? 
                             "atualizar.php" : 
                             "inserir.php"; ?>"
-                            
-method="post" enctype="multipart/form-data">
 
-<input type="hidden" name="idnoticia" value="<?php echo $noticia->idnoticias ??"" ;?>"><br>               
+    method="post" enctype="multipart/form-data">
+        
+        <input type="hidden" name="idnoticia" value="<?php echo $noticia->idnoticia ?? ""; ?>"><br>
 
-        <label>Título</label><br>
-        <input type="text" name="titulo" value="<?php echo $noticia->titulo ??"" ;?>"><br>
+        <label class="form-label">Título</label><br>
+        <input type="text" class="form-control" name="titulo" value="<?php echo $noticia->titulo ?? ""; ?>"><br>
 
-        <label>Matéria</label><br>
-        <input type="text" name="materia" value="<?php echo $noticia->materia ??"" ;?>"><br>
+        <label class="form-label">Matéria</label> <br>
+        <textarea class="form-control" name="materia">
+            <?php echo $noticia->materia ?? ""; ?>
+        </textarea><br>
 
-        <label>Categoria</label><br>
-        <input type="text" name="senha"><?php echo $noticia->categoria ??"" ;?>"><br>
+        <label class="form-label">Categoria</label><br>
+        <input type="text" class="form-control" name="categoria" value="<?php echo $noticia->categoria ?? ""; ?>"><br>
 
-        <label>Foto</label><br>
-        <input type="file" name="foto"><br>
+        <label class="form-label">Foto</label><br>
+        <input type="file" class="form-control" name="foto"><br>
 
-        <button type="submit">Inserir</button>
+        <button type="submit" class="btn btn-primary">Inserir</button>
         
     </form>
+    
+    </div>
 
-</body>
-</html>
+    <?php require_once "../template/rodape.php"; ?>
