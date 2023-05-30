@@ -4,10 +4,6 @@
     include_once "menu.php";
 ?>
 
-
-icias -->
-   
-
         <!-- Noticias -->
 
             <div class="container">
