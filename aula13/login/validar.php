@@ -32,6 +32,7 @@
                 session_start();
                 $_SESSION['usuario'] = $usuario->nome;
                 header("Location; ../noticia/index.php");
+                die();
             }
 
     }else{
